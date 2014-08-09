@@ -9,7 +9,7 @@
 		//General
 		"BaseClass"						"clinkz_wind_walk"                        //The ability this is based on 
 		"MaxLevel"						"3"                                       //Maximum level for the ability 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"			" | allows for multiple behaviors; in truth i dont know why we need those second two clauses but we do
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"			// | allows for multiple behaviors; in truth i dont know why we need those second two clauses but we do
 		"AbilityTextureName"			"clinkz_wind_walk"                        //Icon art
 		
 		//Time
