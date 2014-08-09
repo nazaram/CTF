@@ -180,11 +180,11 @@
 
 }
 
-//=================================================================================================================
-// SafetyWard
-//=================================================================================================================
-"ctf_safetyward"
-	{
+	//=================================================================================================================
+	// SafetyWard
+	//=================================================================================================================
+	"ctf_safetyward"
+	{	
 		// General
  		"BaseClass" 					"ability_datadriven"
  		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
@@ -193,7 +193,6 @@
 		// Casting
  		"AbilityCastPoint"				"0.2"
  		"AbilityCastRange"				"900"
-		"OnOwnerDied"
 		{
 			"CreateThinker"
 			{
@@ -269,4 +268,57 @@
 			}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Electric_Barrier
+	//=================================================================================================================
+	"Electric_Barrier"
+	{
+		//General
+		"BaseClass" 		"disruptor_kinetic_field"
+		"MaxLevel" 		"3"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"	"disruptor_kinetic_field"
+		"AbilityName" 		"Electric Barrier"
+		
+		//Time
+		"AbilityCooldown"	"30 25 20" 
+		"AbilityManaCost" 	"50"
+		
+		//Propertiess
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"	
+				"radius"		"150"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"formation_time"	"0.5 0.5 0.5 0.5"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"duration"		"4.0 6.0 8.0"
+			}
+		}
+	}
+
+
 }
+			
+			
+			
+			
+			
+			
+				
+				
+				
+				
+				
+				
+		
