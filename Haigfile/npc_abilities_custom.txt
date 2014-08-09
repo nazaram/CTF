@@ -66,3 +66,47 @@
 
 
 }
+
+
+
+
+//=================================================================================================================
+	// CTF: Toss
+	//===============================================================================================================
+	"ctf_toss"                                       //code which is called when the ability is referenced
+	{
+		//General
+		"Base Class" 				"tiny_toss"
+		"MaxLevel"                               "1"
+		"AbilityBehavior"                      "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_RUNE_TARGET"
+		"AbilityTextureName"                 "tiny_toss" //icon art
+		
+		//Time
+		"AbilityCooldown" "65" 
+		"AbilityManaCost" "150"
+		
+		//Properties
+		"Ability Special" 
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"1.0 1.0 1.0 1.0"
+			}
+		
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"grab_radius"			"250 250 250 250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"275 275 275 275"	
+			
+			}
+		}
+	}
+ }
+
+
