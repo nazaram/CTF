@@ -104,31 +104,7 @@
 		}
 	}
 
-	//=================================================================================================================
-	// CTF: Power Cogs
-	//=================================================================================================================
-	"ctf_power_cogs"                           //Code which is called when the ability is referenced
-	{
-		//General
-		"BaseClass"						"rattletrap_power_cogs"                        //The ability this is based on 
-		"MaxLevel"						"3"                                       //Maximum level for the ability 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"			// | allows for multiple behaviors; in truth i dont know why we need those second two clauses but we do
-		"AbilityTextureName"			"rattletrap_power_cogs"                        //Icon art
-		
-		//Time
-		"AbilityCooldown"		"30 25 20"                  //Spaces separate what it does at separate levels
-		"AbilityManaCost"		"100"
-
-		//Properties
-		"AbilitySpecial"                                    //This is how you edit separate values apparently
-
-
-
-}
-
-
-
-
+	
 //=================================================================================================================
 	// CTF: Toss
 	//===============================================================================================================
