@@ -220,12 +220,7 @@
       	    "EffectName" "SafetyWard_Invuln"
       	    "EffectAttachType" "follow_origin"
       	   "Target" "TARGET"
-                "ControlPoints"
-    	        {
-       		"00" "0 0 0"
-       		"01" "%radius 1 1"
-      	      }
-             }
+                
            }
       }
    "create_SafetyWard_armor_bonus_aura"
@@ -242,7 +237,8 @@
        "Damage" "%damage"
        "Target" "TARGET"
       }
-     }*/
+     }
+     
      "Properties"
      {
        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
