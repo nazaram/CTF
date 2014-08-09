@@ -43,7 +43,66 @@
 		
 		
 	}		
-
+	//=================================================================================================================
+	// CTF: Power Cogs
+	//=================================================================================================================
+	"ctf_powercogs"
+	{
+		// General
+		"BaseClass"						"rattletrap_power_cogs"                        
+		"MaxLevel"						"3"                                       		
+		"AbilityTextureName"			"rattletrap_power_cogs"                        
+		
+		"ID"							"5238"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		
+		// Time		
+		"AbilityCooldown"				"25 20 15"
+		
+		// Cost
+		"AbilityManaCost"				"100 90 80"
+		
+		// Special
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"225"
+			}
+			"02"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1 1.5 2"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"drain_amount"		"0 0 0"
+			}
+			"04"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"attacks_to_destroy"	"1 1 1"
+			}
+			"05"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"push_length"		"800"
+			}
+			"06"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"push_speed"		"600"
+			}
+			"07"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"spacing"			"160 160 160"
+			}
+		}
+	}
 
 	//=================================================================================================================
 	// CTF: Power Cogs
