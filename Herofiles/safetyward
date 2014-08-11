@@ -1,0 +1,127 @@
+/*
+	"ctf_safetyward"
+	{
+		// General
+ 		"BaseClass" 					"juggernaut_healing_ward"
+ 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"juggernaut_healing_ward"
+		"MaxLevel"						"3"
+		
+		//Casting
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		//Time
+		"AbilityCooldown"				"60"
+		"AbilityDuration"				"5 6 7"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"250 250 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"healing_ward_aura_radius"	"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"2"
+			}		
+		}
+	}*/
+		
+	
+	
+	
+	
+	//=================================================================================================================
+	// CTF: Safety Ward
+	//===============================================================================================================
+	"ctf_safetyward"
+	{
+		// General
+ 		"BaseClass" 					"ability_datadriven"
+ 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"juggernaut_healing_ward"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//"MaxLevel"					"3"
+		
+		//Casting
+		"AbilityCastRange"				"200 200 200"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		
+		//Time
+		"AbilityCooldown"				"60 60 60"
+		
+		"CreateThinker"
+		{
+			"ModifierName"				"ctf_safetyward_thinker
+			"Target"					"POINT"
+		}
+		
+		"Modifiers"
+		{
+			"ctf_safetyward_thinker"
+			{
+				"Aura"						"create_bonus_armor_aura"
+				"Aura_Radius"				"%radius"
+				"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"				"DOTA_UNIT_TARGET_HERO"
+				"Duration"					"%duration"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName" "alchemist_acid_spray"
+						"EffectAttachType" "follow_origin"
+						"Target" "TARGET"
+						"ControlPoints"
+						{
+							"00" "0 0 0"
+							"01" "%radius 1 1"
+						}
+					}
+				}
+			}
+			"create_bonus_armor_aura
+			{
+				"IsDebuff" "0"
+				"IsPurgable" "0"
+				"EffectName" "alchemist_acid_spray_debuff"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+				}
+			}
+		}
+		
+		//Special
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"250 250 250"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"duration"		"5 6 7"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_armor"	"100 100 100"
+			}		
+		}
+	}
