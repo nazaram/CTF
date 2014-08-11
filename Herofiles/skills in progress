@@ -125,3 +125,90 @@
 			}		
 		}
 	}
+
+
+
+
+"ctf_electricshield"
+	{
+		//General
+		"BaseClass"						"templar_assassin_refraction"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"lich_frost_armor"
+		"MaxLevel"						"3"
+		
+		// Casting
+		AbilityCastPoint "0.5 0.5 0.5"
+		
+		//Time
+		"AbilityCooldown"		"30 25 20"                 
+		"AbilityManaCost"		"100"
+	
+		//Ability
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"ctf_icearmor_slow"
+				"Target"		"CASTER"
+			}
+		}
+		
+		//Modifiers
+		{
+			"ctf_icearmor"
+			{
+				"IsHidden"     "1"
+				"Passive"      "1"
+				"OnAttacked"
+				{
+					"movespeedslow" "%move_slow"
+					"attackspeedslow" "%attack_slow"
+					"duration"	"%duration_slow"
+					"Target" "ATTACKER"
+				}
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"instances"					"10 10 10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"0 0 0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_threshold"			"100 100 100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5 5 5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_slow"					"-100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_slow"				"-50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration_slow"					"3 4 5"
+			}
+		}
+	}
+
+
