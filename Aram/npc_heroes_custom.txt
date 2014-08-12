@@ -1,6 +1,8 @@
 // Dota Heroes File
 // NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
 // the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+
+
 "DOTAHeroes"
 {
 	//=================================================================================================================
@@ -9,10 +11,135 @@
 	"npc_dota_hero_juggernaut_ctf"
 	{
 		"override_hero"			"npc_dota_hero_juggernaut"
+		"AbilityLayout"			"4"
 		"Ability1"				"ctf_windwalk"
-		"Ability2"				"rattletrap_power_cogs"
-		"Ability3"				"tiny_toss"
-		"Ability4"				""
-		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+		"Ability2"				"ctf_kinetic"
+		"Ability3"				"ctf_sigil"
+		"Ability4"				"ctf_pounce"
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"AttackDamageMin" 		"100"
+		"AttackDamageMax" 		"100"
+		
+		"AttributeBaseStrength"		"0"										// Base strength
+		"AttributeStrengthGain"		"0"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"										// Base intelligence
+		"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"										// Base agility
+		"AttributeAgilityGain"		"0"			
+		
+		"BountyXP"					"300"			
+		
+		"MovementSpeed"				"500"									// Speed.
+		"MovementTurnRate"			"1.0"									// Turning rate
+		"StatusHealth"				"100"									// Base health
+		"StatusMana"				"250"										// Base mana.
+		"StatusManaRegen"			"0.5"									// Mana regeneration rate.
+		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	}	
+
+	//===================================================================================================================
+	//HERO: Morphling
+	//===================================================================================================================
+
+	"npc_dota_hero_morphling_ctf"
+	{
+		"AbilityLayout" 	"4"
+		"override_hero"		"npc_dota_hero_morphling"
+		"Ability1"			"ctf_windwalk"
+		"Ability2"			"ctf_kinetic"
+		"Ability3"			"ctf_sigil"
+		"Ability4"			"ctf_waveform"
+		"VisionNighttimeRange"		"1800"								// Range of vision at night time.
+		"AttackDamageMin" 		"100"
+		"AttackDamageMax" 		"100"
+		
+		"AttributeBaseStrength"		"0"										// Base strength
+		"AttributeStrengthGain"		"0"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"										// Base intelligence
+		"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"										// Base agility
+		"AttributeAgilityGain"		"0"			
+		
+		"BountyXP"					"300"			
+		
+		"MovementSpeed"				"500"									// Speed.
+		"MovementTurnRate"			"1.0"									// Turning rate
+		"StatusHealth"				"100"									// Base health
+		"StatusMana"				"250"										// Base mana.
+		"StatusManaRegen"			"0.5"									// Mana regeneration rate.
+		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	
 	}
+	
+	//===================================================================================================================
+	//HERO: Tiny
+	//===================================================================================================================
+
+	"npc_dota_hero_tiny_ctf"
+	{
+		"AbilityLayout" 	"4"
+		"override_hero"		"npc_dota_hero_tiny"
+		"Ability1"			"ctf_windwalk"
+		"Ability2"			"ctf_kinetic"
+		"Ability3"			"ctf_sigil"
+		"Ability4"			"ctf_toss"
+		"VisionNighttimeRange"		"1800"	 								// Range of vision at night time.
+		"AttackDamageMin" 		"100"
+		"AttackDamageMax" 		"100"
+		
+		"AttributeBaseStrength"		"0"										// Base strength
+		"AttributeStrengthGain"		"0"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"										// Base intelligence
+		"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"										// Base agility
+		"AttributeAgilityGain"		"0"			
+		
+		"BountyXP"					"300"			
+		
+		"MovementSpeed"				"500"									// Speed.
+		"MovementTurnRate"			"1.0"									// Turning rate
+		"StatusHealth"				"100"									// Base health
+		"StatusMana"				"250"										// Base mana.
+		"StatusManaRegen"			"0.5"									// Mana regeneration rate.
+		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	
+	}
+
+	//===================================================================================================================
+	//HERO: Clockwerk
+	//===================================================================================================================
+
+	"npc_dota_hero_rattletrap_ctf"
+	{
+		"AbilityLayout" 	"4"
+		"override_hero"		"npc_dota_hero_rattletrap"
+		"Ability1"			"ctf_windwalk"
+		"Ability2"			"ctf_powercogs"
+		"Ability3"			"ctf_sigil"
+		"Ability4"			"ctf_hookshot"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+		"AttackDamageMin" 		"100"
+		"AttackDamageMax" 		"100"
+		
+		"AttributeBaseStrength"		"0"										// Base strength
+		"AttributeStrengthGain"		"0"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"										// Base intelligence
+		"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"										// Base agility
+		"AttributeAgilityGain"		"0"			
+		
+		"BountyXP"					"300"			
+		
+		"MovementSpeed"				"500"									// Speed.
+		"MovementTurnRate"			"1.0"									// Turning rate
+		"StatusHealth"				"100"									// Base health
+		"StatusMana"				"250"									// Base mana.
+		"StatusManaRegen"			"0.5"									// Mana regeneration rate.
+		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	
+	}
+	
+}
+	
+
 }
