@@ -1,0 +1,33 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Juggernaut
+	//=================================================================================================================
+	"npc_dota_hero_juggernaut_ctf"
+	{
+		"override_hero"			"npc_dota_hero_juggernaut"
+		"Ability1"				"ctf_kinetic"
+		"Ability2"				"ctf_windwalk"
+		"Ability3"				"ctf_powercogs"
+		"Ability4"				"ctf_pounce"
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	}
+	
+	//=================================================================================================================
+	// HERO: Clockwerk
+	//=================================================================================================================
+	"npc_dota_hero_clockwerk_ctf"
+	{
+		"override_hero"			"npc_dota_hero_rattletrap"
+		"Ability1"				"ctf_powercogs"
+		"Ability2"				"ctf_electricshield"
+		"Ability3"				""
+		"Ability4"				""
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+			
+	}
+	
+}
