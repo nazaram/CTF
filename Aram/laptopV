@@ -1,0 +1,661 @@
+// Dota Heroes File
+"DOTAAbilities"           //Basically the file name
+{
+	//=================================================================================================================
+	// CTF: Windwalk
+	//=================================================================================================================
+	"ctf_windwalk"                       //Code which is called when the ability is referenced
+	{
+		//General
+		"BaseClass"						"clinkz_wind_walk"                        //The ability this is based on 
+		"MaxLevel"						"3"                                       //Maximum level for the ability 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"		// | allows for multiple behaviors; in truth i dont know why we need those second two clauses but we do
+		"AbilityTextureName"			"clinkz_wind_walk"                        //Icon art
+		"AbilityName"					"Windwalk"
+		
+		//Time
+		"AbilityCooldown"		"30 25 20"                  //Spaces separate what it does at separate levels
+		"AbilityManaCost"		"100"
+		
+		//Properties
+		"AbilitySpecial"                                    //This is how you edit separate values apparently
+		{
+			"01"                                               //I have no idea what the numbers mean or if their order matters
+			{
+				"var_type"			"FIELD_INTEGER"           //for whole numbers
+				"duration"			"4 5 6"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"               //for decimals
+				"fade_time"			"0.6"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed_bonus_pct"		"10"
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+	}	
+	//=================================================================================================================
+	// CTF: Power Cogs
+	//=================================================================================================================
+	"ctf_powercogs"
+	{
+		// General
+		"BaseClass"						"rattletrap_power_cogs"                        
+		"MaxLevel"						"3"                                       		
+		"AbilityTextureName"			"rattletrap_power_cogs" 
+		
+		"precache"
+		{
+			"model"					"models/heroes/rattletrap/rattletrap_cog.mdl"
+			"particle_folder"		"particles/units/heroes/hero_rattletrap"
+		}
+		
+		"ID"							"5238"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		
+		// Time		
+		"AbilityCooldown"				"25 20 15"
+		
+		// Cost
+		"AbilityManaCost"				"100 90 80"
+		
+		
+		// Special
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"225"
+			}
+			"02"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1 1.5 2"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"drain_amount"		"0 0 0"
+			}
+			"04"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"attacks_to_destroy"	"1 1 1"
+			}
+			"05"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"push_length"		"800"
+			}
+			"06"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"push_speed"		"600"
+			}
+			"07"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"spacing"			"160 160 160"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// CTF: Toss
+	//===============================================================================================================
+	"ctf_toss"
+	{
+		// General
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_RUNE_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"BaseClass"						"tiny_toss"
+		
+		"precache"
+		{
+			"particle_folder"       "particles/units/heroes/hero_tiny"
+		}
+		
+		//Specifics
+		"MaxLevel"                      "1"
+		"AbilityName"					"Toss"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		// Casting
+		"AbilityCastRange"				"1300"
+		"AbilityCastPoint"				"0.0"
+
+		// Time
+		"AbilityCooldown"				"65"
+
+		// Cost
+		"AbilityManaCost"				"150"
+
+		// Stats
+		"AbilityModifierSupportValue"	"0.25"	// generally used for damage only
+
+		// Special
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"grab_radius"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"275"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage_pct"		"20"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"grow_bonus_damage_pct"		"35"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_range"				"1500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"toss_damage"				"75"
+			}
+
+		}
+	}
+	
+	//=================================================================================================================
+	// Electric_Barrier
+	//=================================================================================================================
+	"ctf_kinetic"
+	{ 
+		// General
+		//"ID"       "5460"              // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"BaseClass"      "disruptor_kinetic_field"
+		"MaxLevel"                      "3"
+		"AbilityCastAnimation"   "ACT_DOTA_DISABLED"
+  
+		"precache"
+		{
+			"particle_folder"       "particles/units/heroes/hero_disruptor"
+		}
+  
+  
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"    "0.05 0.05 0.05"
+
+	// Time  
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"    "14 12 10"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"    "100 50 25"
+  
+	// Cast Range
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"    "700 800 900 1000"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"     "FIELD_INTEGER"
+			"radius"     "300 325 375 425"
+		}
+		"02"
+		{
+			"var_type"     "FIELD_FLOAT"
+			"formation_time"   "1.5 1.3 1.1 0.9"
+		}
+		"03"
+		{
+			"var_type"     "FIELD_FLOAT"
+		"duration"     "2.0 2.50 3.25 4.0"
+		}
+	}
+	}
+	
+	
+	//================================================================================================
+	// Pounce
+	//===============================================================================================
+	"ctf_pounce"
+	{
+		// General
+		"BaseClass"						"slark_pounce"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"slark_pounce"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"                      "1"
+
+		"precache"
+		{
+			"particle_folder"				"particles/units/heroes/hero_slark"
+		}
+		
+		
+		//Time
+		"AbilityCooldown"				"55"
+		
+		//Cost
+		"AbilityManaCost"				"50"
+	
+		// Special		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pounce_distance"		"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pounce_speed"			"933.33"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pounce_acceleration"	"7000.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pounce_radius"			"95"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pounce_damage"			"0 0 0 0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leash_duration"		"3.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"leash_radius"			"325"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Tusk: Frozen Sigil
+	//=================================================================================================================
+	"ctf_sigil"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"tusk_frozen_sigil"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"                      "3"
+		
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_tusk"
+			"model"                     "models/heroes/tuskarr/tuskarr_sigil.mdl" 
+		}
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1 0.1 0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"65.0 45.0 25.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 65 55"
+
+		
+		//Vision
+		//-------------------------------------------------------------------------------------------------------------
+		{
+			"VisionDaytimeRange"            "2000"          // Range of vision during day light.
+            "VisionNighttimeRange"          "1000"          // Range of vision at night time.
+		}
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"sigil_radius"				"300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"sigil_duration"			"30.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_slow"					"0 45 55"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_slow"				"75 85 95"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_hero_attacks"			"5 7 10"
+			}
+			
+
+		}
+	}
+	
+	//=================================================================================================================
+	// Morphling: Waveform
+	//=================================================================================================================
+	"ctf_waveform"
+	{
+		// General
+		"ID"							"5052"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"morphling_waveform"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxLevel"                      "1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_morphling"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.25"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"65"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"200"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Rattletrap: Hookshot
+	//=================================================================================================================
+	"ctf_hookshot"
+	{
+		// General
+		"BaseClass"						"rattletrap_hookshot"                        
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxLevel"                      "1"
+
+		"Precache"
+		{	
+			"particle_folder"		"particles/units/heroes/hero_rattletrap"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"750"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"70.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"latch_radius"		"125 125 125"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stun_radius"		"175 175 175"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.5"
+			}
+			
+			"04"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"3000"
+			}
+			"05"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"tooltip_range"		"1000"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"0 0 0"
+			}
+			
+		}
+	}
+	
+
+	//=================================================================================================================
+	// Shredder: Chain
+	//=================================================================================================================	
+	"ctf_chain"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"shredder_timber_chain"
+		"ID"							"5525"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"FightRecapLevel"				"1"
+		"MaxLevel"                      "1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_shredder"
+		}
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"chain_radius"		"90"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1750"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_radius"		"0
+			}
+			"04"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"2000"
+			}
+			"05"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"0"
+			}
+		}
+	}	
+
+	
+	//=================================================================================================================
+	// Magnataur: Skewer
+	//=================================================================================================================	
+	"ctf_skewer"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"magnataur_skewer"
+		"ID"							"5520"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"MaxLevel"                      "1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		"precache"
+		{
+			"particle_folder"			"particles/units/heroes/hero_magnataur"
+			"GameSoundsFile"			"scripts/game_sounds_heroes/game_sounds_magnataur.txt"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"75"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"skewer_speed"					"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"skewer_radius"				"125"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"				"5"
+			}			
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"skewer_damage"			"0"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tree_radius"				"1500"
+			}
+		}
+	}
+	
+}
+
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
